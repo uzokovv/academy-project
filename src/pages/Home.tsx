@@ -1,8 +1,9 @@
 import React from 'react'
+import Courses from '../components/Main'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div><Courses/></div>
   )
 }
 
