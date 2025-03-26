@@ -28,7 +28,22 @@ const courses = [
 export default function Courses() {
   return (
     <div className="bg-[#0d1117] text-white py-20 px-8 text-center relative">
-      <h2 className="text-5xl font-bold mb-12">Asosiy yo‘nalishlarimiz</h2>
+      <motion.h2 className="text-5xl font-bold mb-20">
+        {"Asosiy yo‘nalishlarimiz".split(" ").map((word, i) => (
+          <span key={i} className="inline-block">
+            {word.split("").map((letter, j) => (
+              <motion.span
+                key={j}
+                whileHover={{ y: -5 }}
+                className="inline-block mr-[1px]"
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                {letter}
+              </motion.span>
+            ))} {" "}
+          </span>
+        ))}
+      </motion.h2>
       <div className="flex flex-col md:flex-row gap-8 justify-center relative z-10">
         {courses.map((course, index) => (
           <motion.div
@@ -67,7 +82,7 @@ export default function Courses() {
       <div className="mt-10 flex justify-center">
         <Button
           variant="outline"
-          className="border-white text-white hover:bg-white hover:text-black transition-all px-10 py-4 text-lg font-semibold uppercase tracking-widest border-2 rounded-md"
+          className="border-white text-white hover:bg-white hover:text-black transition-all px-8 py-6 text-lg font-semibold uppercase tracking-widest border-2"
         >
           Batafsil
         </Button>
