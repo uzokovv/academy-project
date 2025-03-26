@@ -7,7 +7,7 @@ function Home() {
   const particlesRef = useParticles();
   return (
     <div>
-      <section ref={particlesRef} id="tsparticles" className="relative h-screen w-full">
+      <section ref={particlesRef} id="tsparticles" className="relative h-screen">
         <Navbar />
       </section>
       <Courses />

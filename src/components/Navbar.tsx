@@ -9,7 +9,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 px-6 lg:px-16 py-4 text-[20px] ${darkMode ? "text-white" : "text-black"} shadow-md`}>
+    <nav className={`fixed top-0 w-full bg-[none] z-50 px-6 lg:px-16 py-4 text-[20px] ${darkMode ? "text-white" : "text-black"} shadow-md`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* logo */}
         <div className="flex items-center gap-2">
