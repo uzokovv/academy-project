@@ -27,7 +27,7 @@ const courses = [
 
 export default function Courses() {
   return (
-    <div className="bg-[#0d1117] text-white py-20 px-8 text-center relative">
+    <div className="bg-rgb(18,23,35) text-white py-20 px-8 text-center relative">
       <motion.h2 className="text-5xl font-bold mb-20">
         {"Asosiy yo‘nalishlarimiz".split(" ").map((word, i) => (
           <span key={i} className="inline-block">

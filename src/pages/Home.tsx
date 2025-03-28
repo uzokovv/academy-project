@@ -1,3 +1,4 @@
+import Footer from '../components/Footer';
 import Courses from '../components/Main'
 import Navbar from '../components/Navbar'
 import useParticles from "../components/effect";
@@ -27,6 +28,7 @@ function Home() {
         </div>
       </div>
       <Courses />
+      <Footer/>
     </div>
   )
 }
