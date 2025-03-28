@@ -12,8 +12,8 @@ function Home() {
 
       <Navbar />
       <div className='container mx-auto max-w-[700px] mt-50 text-center text-white'>
-        <h1 className='text-5xl font-bold '>Sfera Academy - bu <span className='text-[#6A9C89]'>Kelajak</span> <br />
-          kasblar akademiyasi!</h1>
+        <h1 className='text-5xl font-bold '>Milliardev IT  - bu <span className='text-[#6A9C89]'>Kelajak</span> <br />
+          kasblar companyasi!</h1>
 
         <p className='mt-15 text-[#bcbcbc] text-[18px]'>Maqsadimiz hududlardagi yoshlarda zamonaviy kasblarga qiziqishni kuchaytirish,
           ularni muayyan soha mutaxassislari etib tarbiyalash va shu orqali ularning qadr-qimmatini oshirishdan iborat.</p>
