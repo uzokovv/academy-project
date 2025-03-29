@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "./ui/card";
 import { motion } from "framer-motion";
+import TextEffect from "./TextEffect";
 
 interface PortfolioCardProps {
   title: string;
@@ -56,22 +57,7 @@ const PortfolioGrid = () => {
 
   return (
     <div className="bg-rgb(18,23,35) text-white py-10 text-center">
-      <motion.h2 className="text-5xl font-bold mb-20">
-        {"O‘quvchilarimizportfoliosi".split(" ").map((word, i) => (
-          <span key={i} className="inline-block mr-2">
-            {word.split("").map((letter, j) => (
-              <motion.span
-                key={j}
-                whileHover={{ y: -9 }}
-                className="inline-block"
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                {letter}
-              </motion.span>
-            ))} {" "}
-          </span>
-        ))}
-      </motion.h2>
+      <TextEffect text={'Afzalliklarimiz'} />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 max-w-6xl mx-auto">
         {portfolioItems.map((item, index) => (
           <PortfolioCard key={index} {...item} />
