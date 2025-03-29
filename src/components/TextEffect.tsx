@@ -1,9 +1,8 @@
-import React from 'react'
 import { motion } from "framer-motion";
 
 const TextEffect = ({text}: any) => {
   return (
-    <div className="bg-rgb(18,23,35) text-white py-10 text-center">
+    <div className="bg-rgb(18,23,35) text-white pt-10 text-center">
       <motion.h2 className="text-5xl font-bold mb-20">
         {`${text}`.split(" ").map((word, i) => (
           <span key={i} className="inline-block mr-2">

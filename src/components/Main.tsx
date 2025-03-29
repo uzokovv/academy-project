@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
+import TextEffect from "./TextEffect";
 
 const courses = [
   {
@@ -28,22 +29,7 @@ const courses = [
 export default function Courses() {
   return (
     <div className="bg-rgb(18,23,35) text-white py-20 px-8 text-center relative">
-      <motion.h2 className="text-5xl font-bold mb-20">
-        {"Asosiy yo‘nalishlarimiz".split(" ").map((word, i) => (
-          <span key={i} className="inline-block">
-            {word.split("").map((letter, j) => (
-              <motion.span
-                key={j}
-                whileHover={{ y: -9 }}
-                className="inline-block mr-[1px]"
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                {letter}
-              </motion.span>
-            ))} {" "}
-          </span>
-        ))}
-      </motion.h2>
+      <TextEffect text={"Asosiy yo‘nalishlarimiz"} />
       <div className="flex flex-col md:flex-row gap-8 justify-center relative z-10">
         {courses.map((course, index) => (
           <motion.div
