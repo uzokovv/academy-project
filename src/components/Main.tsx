@@ -7,21 +7,21 @@ const courses = [
     duration: "Davomiyligi: 2 oy",
     description:
       "Foundation kursida dasturlash sohasida boshlang‘ich bilimlarga ega bo‘lish bilan birga dasturlash sohasidagi asosiy konseptlarni va texnologiyalarni o‘rganishga tayyorlaydi.",
-    image: "/foundation.png",
+    image: "http://localhost:5173/src/assets/milliardev.jpg",
   },
   {
     title: "Front-end",
     duration: "Davomiyligi: 6 oy",
     description:
       "Front-end foydalanuvchi interfeysini yaratadigan qismi bo‘lib, saytning dizayni, animatsiyalar, va foydalanuvchi bilan interaktiv kommunikatsiya qurishni o‘z ichiga oladi.",
-    image: "/frontend.png",
+    image: "http://localhost:5173/src/assets/milliardev.jpg",
   },
   {
     title: "Back-end",
     duration: "Davomiyligi: 10 oy",
     description:
       "Back-end Siz foydalanayotgan websaytni ichki qismi bo‘lib, server, ma'lumotlar bazasi va tizimlar orasidagi logikani yaratishni, turli o‘yin va telegram botlar yaratishni o‘rganasiz.",
-    image: "/backend.png",
+    image: "http://localhost:5173/src/assets/milliardev.jpg",
   },
 ];
 
@@ -34,9 +34,9 @@ export default function Courses() {
             {word.split("").map((letter, j) => (
               <motion.span
                 key={j}
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -9 }}
                 className="inline-block mr-[1px]"
-                transition={{ type: "spring", stiffness: 300 }}
+                transition={{ type: "spring", stiffness: 400 }}
               >
                 {letter}
               </motion.span>
@@ -82,7 +82,7 @@ export default function Courses() {
       <div className="mt-10 flex justify-center">
         <Button
           variant="outline"
-          className="border-white text-white hover:bg-white hover:text-black transition-all px-8 py-6 text-lg font-semibold uppercase tracking-widest border-2"
+          className="border-white text-white bg-rgb(18,23,35) hover:bg-whiteru hover:text-blue-900 transition-all px-8 py-6 text-lg font-semibold uppercase tracking-widest border-2"
         >
           Batafsil
         </Button>

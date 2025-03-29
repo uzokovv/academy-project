@@ -1,6 +1,7 @@
 import Footer from '../components/Footer';
 import Courses from '../components/Main'
 import Navbar from '../components/Navbar'
+import PortfolioGrid from '../components/Section';
 import useParticles from "../components/effect";
 
 
@@ -28,6 +29,7 @@ function Home() {
         </div>
       </div>
       <Courses />
+      <PortfolioGrid/>
       <Footer/>
     </div>
   )
