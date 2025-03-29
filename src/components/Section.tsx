@@ -57,7 +57,7 @@ const PortfolioGrid = () => {
 
   return (
     <div className="bg-rgb(18,23,35) text-white py-10 text-center">
-      <TextEffect text={'Afzalliklarimiz'} />
+      <TextEffect text={'Milliardev IT company portfoliosi'} />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 max-w-6xl mx-auto">
         {portfolioItems.map((item, index) => (
           <PortfolioCard key={index} {...item} />
