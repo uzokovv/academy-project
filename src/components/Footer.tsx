@@ -5,7 +5,7 @@ import logg from '../assets/milliardev.jpg'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-rgb(30,35,46) text-gray-300 py-10">
+    <footer className="bg-rgb(30,35,46) text-gray-300 py-10 mt-20">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
         <div>
           <img src={logg} alt="Milliardev IT" className="w-15" />

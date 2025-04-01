@@ -1,7 +1,6 @@
 import { Briefcase, Network, Users } from 'lucide-react';
 import Footer from '../components/Footer';
 import Courses from '../components/Main'
-import Navbar from '../components/Navbar'
 import PortfolioGrid from '../components/Section';
 import useParticles from "../components/effect";
 import { FaCertificate } from 'react-icons/fa';
@@ -48,10 +47,10 @@ function Home() {
         <p className='mt-15 text-[#bcbcbc] text-[18px]'>Maqsadimiz hududlardagi yoshlarda zamonaviy kasblarga qiziqishni kuchaytirish,
           ularni muayyan soha mutaxassislari etib tarbiyalash va shu orqali ularning qadr-qimmatini oshirishdan iborat.</p>
         <div className="flex gap-4 items-center justify-center mt-10 mb-70" >
-          <button className="px-6 py-3 text-white bg-green-500 rounded-md hover:bg-green-600 transition">
+          <button className="px-6 py-3 text-white bg-[#5E8A79] rounded-[2px] hover:bg-[#406456] transition text-[17px]" >
             Kurslar haqida
           </button>
-          <button className="px-6 py-3 text-white bg-gray-700 rounded-md hover:bg-gray-600 transition">
+          <button className="px-6 py-3 text-white bg-[#2A2F39] rounded-[2px] hover:bg-[#22262f] transition text-[17px]">
             Biz haqimizda
           </button>
         </div>
@@ -91,9 +90,9 @@ function Home() {
           transition={{ duration: 0.5 }}
           className="p-6 shadow-lg w-full max-w-lg"
         > 
-          <div className='rounded-2xl border-2 border-[#102B2A] p-9'>
-            <h2 className="text-xl font-semibold text-center mb-4">Nega bizda o'qishingiz kerak?</h2>
-            <div className="grid grid-cols-2 gap-2 rounded-2xl text-white items-center" >
+          <div className='rounded-2xl border-2 border-[#102B2A] py-5'>
+            <h2 className="text-2xl font-semibold text-center mb-5">Nega bizda o'qishingiz kerak?</h2>
+            <div className="grid grid-cols-2 gap-3 justify-items-center rounded-2xl text-white " >
               <Card className="flex items-center gap-3 w-30 text-center bg-[#102B2A] border-none text-white">
                 <FaChalkboardTeacher className="text-2xl text-blue-400" />
                 <span>Malakali o'qituvchilar</span>
