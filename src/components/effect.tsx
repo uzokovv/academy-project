@@ -7,7 +7,7 @@ const Effect = () => {
         useEffect(() => {
           if (!particlesRef.current) return;
       
-          window.tsParticles.load(particlesRef.current.id, {
+          tsParticles.load(particlesRef.current.id, {
             fullScreen: { enable: false }, // Faqat section ichida ishlaydi
             background: { color: "#121723" },
             interactivity: {
