@@ -3,6 +3,7 @@ import { Moon, Sun, Menu, X } from "lucide-react";
 import logo  from '../assets/milliardev.jpg'
 import { BsTelegram } from "react-icons/bs";
 import { FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -19,8 +20,8 @@ const Navbar = () => {
 
         {/* Menu */}
         <ul className="hidden md:flex gap-6 text-[18px] font-medium">
-          <li className="hover:text-blue-500 cursor-pointer">Bosh sahifa</li>
-          <li className="hover:text-blue-500 cursor-pointer">Biz haqimizda</li>
+          <li className="hover:text-blue-500 cursor-pointer"><Link to={"/"}>Bosh sahifa </Link></li>
+          <li className="hover:text-blue-500 cursor-pointer"><Link to={'/about'}>Biz haqimizda</Link></li>
           <li className="hover:text-blue-500 cursor-pointer">Portfolio</li>
           <li className="hover:text-blue-500 cursor-pointer">Kurslar</li>
           <li className="hover:text-blue-500 cursor-pointer">Tadbirlar</li>

@@ -40,9 +40,7 @@ function Home() {
   const particlesRef = useParticles();
   return (
     <div>
-      <div ref={particlesRef} id="tsparticles" className="absolute top-0 h-screen text-white -z-1"></div>
-
-      <Navbar />
+      <div ref={particlesRef} id="tsparticles" className="absolute top-0 h-screen max-w-full text-white -z-1"></div>
       <div className='container mx-auto max-w-[700px] mt-50 text-center text-white'>
         <h1 className='text-5xl font-bold '>Milliardev IT  - bu <span className='text-[#6A9C89]'>Kelajak</span> <br />
           kasblar companyasi!</h1>
@@ -91,26 +89,28 @@ function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="p-6 rounded-xl border-[white] shadow-lg w-full max-w-lg"
-        >
-          <h2 className="text-xl font-semibold text-center mb-4">Nega bizda o'qishingiz kerak?</h2>
-          <div className="grid grid-cols-2 gap-4">
-            <Card className="flex items-center gap-3 p-4">
-              <FaChalkboardTeacher className="text-2xl text-blue-400" />
-              <span>Malakali o'qituvchilar</span>
-            </Card>
-            <Card className="flex items-center gap-3 p-4">
-              <MdCastForEducation className="text-2xl text-green-400" />
-              <span>Sifatli ta'lim</span>
-            </Card>
-            <Card className="flex items-center gap-3 p-4">
-              <AiOutlineNodeIndex className="text-2xl text-yellow-400" />
-              <span>Bepul networking</span>
-            </Card>
-            <Card className="flex items-center gap-3 p-4">
-              <GiDiamondHard className="text-2xl text-purple-400" />
-              <span>Yuqori tajriba</span>
-            </Card>
+          className="p-6 shadow-lg w-full max-w-lg"
+        > 
+          <div className='rounded-2xl border-2 border-[#102B2A] p-9'>
+            <h2 className="text-xl font-semibold text-center mb-4">Nega bizda o'qishingiz kerak?</h2>
+            <div className="grid grid-cols-2 gap-2 rounded-2xl text-white items-center" >
+              <Card className="flex items-center gap-3 w-30 text-center bg-[#102B2A] border-none text-white">
+                <FaChalkboardTeacher className="text-2xl text-blue-400" />
+                <span>Malakali o'qituvchilar</span>
+              </Card>
+              <Card className="flex items-center gap-3 w-30 text-center bg-[#102B2A] border-none text-white">
+                <MdCastForEducation className="text-2xl text-green-400" />
+                <span>Sifatli ta'lim</span>
+              </Card>
+              <Card className="flex items-center gap-3 w-30 text-center bg-[#102B2A] border-none text-white">
+                <AiOutlineNodeIndex className="text-2xl text-yellow-400" />
+                <span>Bepul networking</span>
+              </Card>  
+              <Card className="flex items-center gap-3 w-30 text-center bg-[#102B2A] border-none text-white">
+                <GiDiamondHard className="text-2xl text-purple-400" />
+                <span>Yuqori tajriba</span>
+              </Card>
+            </div>
           </div>
         </motion.div>
       </div>
