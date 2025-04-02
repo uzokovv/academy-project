@@ -54,6 +54,21 @@ const Portfoli = () => {
       link: "#",
       image: "/images/faza.jpg",
     },
+    {
+      title: "FAZA",
+      link: "#",
+      image: "/images/faza.jpg",
+    },
+    {
+      title: "FAZA",
+      link: "#",
+      image: "/images/faza.jpg",
+    },
+    {
+      title: "FAZA",
+      link: "#",
+      image: "/images/faza.jpg",
+    },
   ];
 
   return (
