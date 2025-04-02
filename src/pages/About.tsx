@@ -1,9 +1,11 @@
-import { FaTelegram, FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
+import { FaTelegram, FaInstagram, FaYoutube, FaFacebook, FaCertificate } from "react-icons/fa";
 import { Button } from "../components/ui/button";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "../components/ui/breadcrumb";
 import Footer from "../components/Footer";
 import { Card, CardContent } from "../components/ui/card";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip";
+import TextEffect from "../components/TextEffect";
+import { Briefcase, Network, Users } from "lucide-react";
 
 
 export default function AboutPage() {
@@ -13,6 +15,24 @@ export default function AboutPage() {
     { name: "Youtube", icon: FaYoutube },
     { name: "Facebook", icon: FaFacebook },
   ]
+  const features: any = [
+    {
+      icon: Users,
+      title: "Keng va shinam muhit",
+      description: "Bizning o'quv markaz bir vaqtning ozida 150 dan ortiq o‘quvchilar va 20 dan ortiq katta jamoani bir maskanga yig‘a olgan ta‘lim va innovatsiya markazi.Bu o‘quvchilarga muhit yaratishga yordam beradi va bir-birini tushunishlari uchun imkoniyat yaratadi.",
+    },
+    {
+      icon: Network,
+      title: "Malakali ustozlar ko‘magi", 
+      description: "Malakali o‘qituvchilarning o‘quvchilarga yordam berishini ta’minlaydi. Ustozlar o‘quvchilarni o‘rganish jarayonida maslahat beradi, vazifalarni bajarishda yordam berish va ularga darslarini yanada mustahkamlashga ko‘mak beradi.",
+    },
+    {
+      icon: Briefcase,
+      title: "Amaliyotlarga asoslangan dars ishlanmalari",
+      description: "Bu, nazariy bilimlarni amaliyotga o‘tkazishni o‘z ichiga olgan darslar bo‘lib, o‘quvchilarga nazariy ma’lumotlarni amaliyotda ishlatish va ularning ustida amalga oshirishga imkoniyat yaratadi.",
+    },
+  ];
+
   return (
     <div className="bg-gray-900 text-white min-h-screen px-6 md:px-16 py-10 mt-20">
       <div className="flex justify-between items-center">
@@ -101,6 +121,22 @@ export default function AboutPage() {
           </Card>
         </div>
       </div>
+
+      {/* ======================================================================================= */}
+
+      <TextEffect text={'Nima uchun bizni tanlashingiz kerak'} />
+      <div className="mx-auto max-w-[1200px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-white">
+        {features.map((feature: any, index: number) => (
+          <Card key={index} className="bg-transparent border-none text-center hover:transition-ease-in hover:duration-[.9s] hover:bg-[#171F28]">
+            <CardContent className="flex flex-col items-center gap-4 p-6">
+              <feature.icon className="w-12 h-12 text-green-500 text-left" />
+              <h3 className="text-2xl font-bold text-white">{feature.title}</h3>
+              <p className="text-md text-gray-400">{feature.description}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
       <Footer />
     </div>
   );
