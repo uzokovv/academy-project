@@ -17,6 +17,7 @@
     "@mui/material": "^7.0.0",
     "@mui/styled-engine-sc": "^7.0.0",
     "@radix-ui/react-slot": "^1.1.2",
+    "@radix-ui/react-tooltip": "^1.1.8",
     "@tailwindcss/vite": "^4.0.15",
     "@tsparticles/react": "^3.0.0",
     "aos": "^2.3.4",

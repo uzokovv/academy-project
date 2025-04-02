@@ -10,7 +10,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className={`fixed top-0 w-full z-1 px-6 lg:px-16 py-4 text-[20px] ${darkMode ? "text-white" : "text-black"} shadow-md`}>
+    <nav className={`fixed top-0 w-full z-50 px-6 lg:px-16 py-4 text-[20px] ${darkMode ? "text-white" : "text-black"} shadow-md`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* logo */}
         <div className="flex items-center gap-2">
@@ -22,7 +22,7 @@ const Navbar = () => {
         <ul className="hidden md:flex gap-6 text-[18px] font-medium">
           <li className="hover:text-blue-500 cursor-pointer"><Link to={"/"}>Bosh sahifa </Link></li>
           <li className="hover:text-blue-500 cursor-pointer"><Link to={'/about'}>Biz haqimizda</Link></li>
-          <li className="hover:text-blue-500 cursor-pointer">Portfolio</li>
+          <li className="hover:text-blue-500 cursor-pointer"><Link to={'/partfoli'}>Portfolio</Link></li>
           <li className="hover:text-blue-500 cursor-pointer">Kurslar</li>
           <li className="hover:text-blue-500 cursor-pointer">Tadbirlar</li>
         </ul>

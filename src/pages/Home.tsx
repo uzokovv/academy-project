@@ -15,7 +15,7 @@ import vedio from '../assets/navy.mp4'
 
 
 function Home() {
-  const features = [
+  const features: any = [
     {
       icon: Users,
       title: "O‘qituvchilarimiz katta tajribaga ega",
@@ -60,7 +60,7 @@ function Home() {
 
       <TextEffect text={'Afzalliklarimiz'} />
       <div className="mx-auto max-w-[1200px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-white">
-        {features.map((feature, index) => (
+        {features.map((feature: any, index: number) => (
           <Card key={index} className="bg-transparent border-none text-center hover:transition-ease-in hover:duration-[.9s] hover:bg-[#171F28]">
             <CardContent className="flex flex-col items-center gap-4 p-6">
               <feature.icon className="w-12 h-12 text-green-500 text-left" />
@@ -94,19 +94,19 @@ function Home() {
             <h2 className="text-2xl font-semibold text-center mb-5">Nega bizda o'qishingiz kerak?</h2>
             <div className="grid grid-cols-2 gap-3 justify-items-center rounded-2xl text-white " >
               <Card className="flex items-center gap-3 w-30 text-center bg-[#102B2A] border-none text-white">
-                <FaChalkboardTeacher className="text-2xl text-blue-400" />
+                <FaChalkboardTeacher className="text-blue-400" size={50}/>
                 <span>Malakali o'qituvchilar</span>
               </Card>
               <Card className="flex items-center gap-3 w-30 text-center bg-[#102B2A] border-none text-white">
-                <MdCastForEducation className="text-2xl text-green-400" />
+                <MdCastForEducation className="text-green-400" size={50}/>
                 <span>Sifatli ta'lim</span>
               </Card>
               <Card className="flex items-center gap-3 w-30 text-center bg-[#102B2A] border-none text-white">
-                <AiOutlineNodeIndex className="text-2xl text-yellow-400" />
+                <AiOutlineNodeIndex className="text-yellow-400" size={50} />
                 <span>Bepul networking</span>
               </Card>  
               <Card className="flex items-center gap-3 w-30 text-center bg-[#102B2A] border-none text-white">
-                <GiDiamondHard className="text-2xl text-purple-400" />
+                <GiDiamondHard className="text-purple-400" size={50} />
                 <span>Yuqori tajriba</span>
               </Card>
             </div>
