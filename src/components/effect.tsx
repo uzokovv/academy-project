@@ -26,7 +26,7 @@ const Effect = () => {
               color: { value: "#ffffff" },
               links: { color: "#ffffff", distance: 150, enable: true, opacity: 0.5, width: 1 },
               collisions: { enable: true },
-              move: { enable: true, outMode: "bounce", speed: 4 },
+              move: { enable: true, outMode: "bounce", speed: 1 },
               number: { density: { enable: true, value_area: 800 }, value: 80 },
               opacity: { value: 0.5 },
               shape: { type: "circle" },
