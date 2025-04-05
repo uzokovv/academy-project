@@ -4,6 +4,7 @@ import NotFound from './pages/NotFound'
 import About from './pages/About'
 import Navbar from './components/Navbar'
 import Portfoli from './pages/Partfoli'
+import Dashboard from './components/Dashbort'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/partfoli' element={<Portfoli/>} />
+        <Route path='/dashbort' element={<Dashboard/>}/>
         <Route path='*/' element={<NotFound />} />
       </Routes>
     </>
