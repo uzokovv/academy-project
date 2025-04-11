@@ -41,17 +41,17 @@ const PortfolioGrid = () => {
     {
       title: "O'ZBEKISTON BO‘YLAB SAYOHAT",
       link: "#",
-      image: "/images/global-star-tour.jpg",
+      image: "https://avatarko.ru/img/kartinka/2/muzhchina_kapyushon_1774.jpg",
     },
     {
       title: "Gardenaria",
       link: "#",
-      image: "/images/gardenaria.jpg",
+      image: "https://avatarko.ru/img/kartinka/2/muzhchina_kapyushon_1774.jpg",
     },
     {
       title: "FAZA",
       link: "#",
-      image: "/images/faza.jpg",
+      image: "https://avatarko.ru/img/kartinka/2/muzhchina_kapyushon_1774.jpg",
     },
   ];
 

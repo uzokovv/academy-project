@@ -42,32 +42,32 @@ const Portfoli = () => {
     {
       title: "O'ZBEKISTON BO‘YLAB SAYOHAT",
       link: "#",
-      image: "/images/global-star-tour.jpg",
+      image: "https://suret.pics/uploads/posts/2023-09/1695273917_006.jpg",
     },
     {
       title: "Gardenaria",
       link: "#",
-      image: "/images/gardenaria.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNJqxCzhVRrUBUNpyz-e74mtn28OI9fwhLKUUApAeLyxSfN8B61bAE8G11NZanJZC2eAo&usqp=CAU",
     },
     {
       title: "FAZA",
       link: "#",
-      image: "/images/faza.jpg",
+      image: "https://suret.pics/uploads/posts/2023-09/1695273365_3-48.jpg",
     },
     {
       title: "FAZA",
       link: "#",
-      image: "/images/faza.jpg",
+      image: "https://avatarko.ru/img/kartinka/2/muzhchina_kapyushon_1774.jpg",
     },
     {
       title: "FAZA",
       link: "#",
-      image: "/images/faza.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ590K0KSbqLdEhQKkCQcSvn3a5VI2UPg5_Yvf0dJVFJR3-aH5OgrSrBmwaLQNiD1Fh8PM&usqp=CAU",
     },
     {
       title: "FAZA",
       link: "#",
-      image: "/images/faza.jpg",
+      image: "https://avatarko.ru/img/kartinka/2/muzhchina_kapyushon_1774.jpg",
     },
   ];
 
