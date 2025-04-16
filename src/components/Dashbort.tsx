@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
 import { signinUrl, getProjectsUrl, addProjectUrl } from "../api/api";
+import { getAuthToken, setAuthToken, removeAuthToken } from "../api/token";
 
-// Define types
+
+
 interface Portfolio {
   id: number;
   title: string;
   description: string;
 }
 
-// Helper to get auth token
-const getAuthToken = () => localStorage.getItem("authToken");
 
 const DashboardLayout = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,28 +20,18 @@ const DashboardLayout = () => {
 
   const handleModalToggle = () => setIsModalOpen(!isModalOpen);
 
-  // Call login API on component mount
   useEffect(() => {
     const signin = async () => {
       try {
-        const response = await fetch(signinUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: "sabidjanovv@gmail.com",  // use the email for signin
-            password: "m12345678",  // your password here
-          }),
+        const response = await axios.post(signinUrl, {
+          email: "sabidjanovv@gmail.com",
+          password: "m12345678",
         });
 
-        const data = await response.json();
+        console.log("Signin response:", response.data);
 
-        // Log the response to check what is being returned
-        console.log("Signin response:", data);
-
-        if (data?.access_token) {
-          localStorage.setItem("authToken", data.access_token);
+        if (response.data?.access_token) {
+          setAuthToken(response.data.access_token); // Save token using the helper
           console.log("Signin successful ✅");
         } else {
           console.warn("Token not found in response.");
@@ -60,19 +51,15 @@ const DashboardLayout = () => {
     queryKey: ["portfolios"],
     queryFn: async () => {
       const token = getAuthToken();
-      if (!token) {
-        throw new Error("No auth token found");
-      }
+      if (!token) throw new Error("No auth token found");
 
-      const response = await fetch(getProjectsUrl, {
+      const response = await axios.get(getProjectsUrl, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
 
-      if (!response.ok) throw new Error("Failed to fetch portfolios");
-
-      return response.json();
+      return response.data;
     },
   });
 
@@ -84,17 +71,13 @@ const DashboardLayout = () => {
       const token = getAuthToken();
       if (!token) throw new Error("No auth token found");
 
-      const response = await fetch(addProjectUrl, {
-        method: "POST",
+      const response = await axios.post(addProjectUrl, portfolio, {
         headers: {
-          "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(portfolio),
       });
 
-      if (!response.ok) throw new Error("Failed to add portfolio");
-      return response.json();
+      return response.data;
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["portfolios"] });
@@ -102,15 +85,19 @@ const DashboardLayout = () => {
       setPortfolioDescription("");
       handleModalToggle();
     },
+    onError: (error) => {
+      console.error("Error adding portfolio:", error);
+    }
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    addPortfolio({ title: portfolioName, description: portfolioDescription });
+    await addPortfolio({ title: portfolioName, description: portfolioDescription });
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-gray-200 flex">
+      {/* Sidebar and Header */}
       <aside className="w-64 bg-white bg-opacity-40 backdrop-blur-md shadow-lg border-r border-gray-300 hidden md:block">
         <div className="p-6 border-b border-gray-200">
           <h2 className="text-3xl font-extrabold text-indigo-600">🎨 Portfolio</h2>
@@ -138,22 +125,23 @@ const DashboardLayout = () => {
         </header>
 
         <main className="p-6 space-y-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white bg-opacity-40 backdrop-blur-md rounded-2xl shadow-lg p-6 transition hover:shadow-xl">
-            <h3 className="text-lg font-semibold text-gray-700 mb-2">Portfolio soni</h3>
-            <p className="text-4xl font-extrabold text-indigo-600">{portfolios.length}</p>
+          {/* Dashboard Stats */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white bg-opacity-40 backdrop-blur-md rounded-2xl shadow-lg p-6 transition hover:shadow-xl">
+              <h3 className="text-lg font-semibold text-gray-700 mb-2">Portfolio soni</h3>
+              <p className="text-4xl font-extrabold text-indigo-600">{portfolios.length}</p>
+            </div>
+            <div className="bg-white bg-opacity-40 backdrop-blur-md rounded-2xl shadow-lg p-6 transition hover:shadow-xl">
+              <h3 className="text-lg font-semibold text-gray-700 mb-2">Oxirgi qo‘shilgan</h3>
+              <p className="text-gray-600">{portfolios[0]?.title || "Ma'lumot yo‘q"}</p>
+            </div>
+            <div className="bg-white bg-opacity-40 backdrop-blur-md rounded-2xl shadow-lg p-6 transition hover:shadow-xl">
+              <h3 className="text-lg font-semibold text-gray-700 mb-2">Foydalanuvchi</h3>
+              <p className="text-gray-600">sabidjanovv@gmail.com</p>
+            </div>
           </div>
-          <div className="bg-white bg-opacity-40 backdrop-blur-md rounded-2xl shadow-lg p-6 transition hover:shadow-xl">
-            <h3 className="text-lg font-semibold text-gray-700 mb-2">Oxirgi qo‘shilgan</h3>
-            <p className="text-gray-600">{portfolios[0]?.title || "Ma'lumot yo‘q"}</p>
-          </div>
-          <div className="bg-white bg-opacity-40 backdrop-blur-md rounded-2xl shadow-lg p-6 transition hover:shadow-xl">
-            <h3 className="text-lg font-semibold text-gray-700 mb-2">Foydalanuvchi</h3>
-            <p className="text-gray-600">sabidjanovv@gmail.com</p>
-          </div>
-        </div>
 
-
+          {/* Portfolio List */}
           <section>
             <h2 className="text-xl font-semibold text-gray-800 mb-4">📋 Portfolio ro‘yxati</h2>
             <div className="overflow-x-auto bg-white bg-opacity-40 backdrop-blur-md rounded-2xl shadow-md">
@@ -187,6 +175,7 @@ const DashboardLayout = () => {
             </div>
           </section>
 
+          {/* Add Portfolio Button */}
           <div className="mt-6 text-center">
             <button
               onClick={handleModalToggle}
@@ -198,6 +187,7 @@ const DashboardLayout = () => {
         </main>
       </div>
 
+      {/* Modal for Adding Portfolio */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-30">
           <div className="bg-white bg-opacity-90 backdrop-blur-md rounded-lg shadow-lg w-96 p-6">
